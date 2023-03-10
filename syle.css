@@ -5,7 +5,16 @@
 }
 #form
 {
-    margin-top: 7em;
-    border: 1px solid brown;
-    width: 60vw;
+
 }
+label
+{
+    font-weight: 900;
+}
+#age
+{
+    width: 50vw;
+}
+/* onsubmit event in form tag
+js func input var 
+.get */

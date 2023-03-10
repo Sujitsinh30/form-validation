@@ -5,30 +5,71 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <title>Form-Validation</title>
 </head>
-<body style="background: url('./background.jpg');">
+<body style="background: url('./assets/background.jpg'); background-attachment: fixed;">
     <script src="./script.js"></script>
-    <section class="container d-flex justify-content-center">
-        <div class="align-items-center" >
-            <form class="container" action="" id="form">
-                <table>
-                    <tr>
-                        <td><label for="name">Name:</label></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" id="name" placeholder="First Name"><input type="text" id="name" placeholder="Last Name"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="email">Email:</label></td>
-                    </tr>
-                    <tr>
-                        <td><input type="email" id="email" placeholder="Email"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" id="phone" placeholder="phone"></td>
-                    </tr>
-                </table>
-            </form>
+    <form class="bg-light container mt-5">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <div class="row container">
+                <input type="text" class="col-5 form-control" id="fname" placeholder="Enter Your First Name">
+                <p class="col-2"></p>
+                <input type="text" class="col-5 form-control" id="lname" placeholder="Enter Your Last Name">
+            </div>
+          </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter Your Email">
         </div>
-    </section>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="text" class="form-control" id="phone" placeholder="Phone Number">
+        </div>
+        <div class="form-group">
+            <label for="b_date">Birth Date</label>
+            <input type="date" class="form-control" id="b_date" placeholder="Birth Date">
+          </div>
+        <div class="form-group">
+            <label for="ap_time">Appointment Time</label>
+            <input type="time" class="form-control" id="ap_time" placeholder="Appointment Time">
+        </div>
+        <div class="form-group">
+            <label for="color">Choose Your Favourite Color</label><br>
+            <input type="color" id="color" list>
+        </div>
+        <ul class="list-group" style="list-style: none;">
+            <p style="font-weight: 900;">Payment Method</p>
+            <li><input type="radio" id="crd_card">
+            Credit Card<img src="./assets/visa.avif" alt="visa-logo" style="max-width: 2em;">
+            <img src="./assets/Mastercard-Symbol.jpg" alt="mast_card" style="max-width: 2.5em"></li><br>
+
+            <li><input type="radio" id="dbt_card">
+            Debit Card<img src="./assets/Rupay_Logo.png" alt="rupay-logo" style="max-width: 4em;"></li><br>
+
+            <li><input type="radio" id="wallet">
+            Wallets<img class="ml-1"src="./assets/wlt_logo.jpg" alt="wallet_logo" style="max-width: 3em;"></li><br>
+
+            <li><input type="radio" id="upi">
+            UPI<img src="./assets/upi.png" alt="upi_logo" style="max-width: 3em;"></li><br>
+
+            <li><input type="radio" id="cod" value="0">
+            On Cash<img src="./assets/cod.png" alt="cod" style="max-width: 2em;"></li><br>
+        </ul>
+        <div class="form-group">
+            <label for="age">Age(from 15)</label><br>
+            <input type="range" id="age" min="15">
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="chk_box">
+            <label for="vehicle1" class="text-primary"><a href="#">I Have Read All T&C</a></label><br>
+        </div>
+        <div class="form-group">
+            <label for="upl_photo">Upload Image</label><br>
+            <input type="file" id="upl_photo">
+        </div>
+        <div class="form-group">
+            <input type="reset" id="rst_btn">
+            <input type="submit" id="sub_btn">
+        </div>    
+    </form>
 </body>
 </html>
