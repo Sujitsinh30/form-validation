@@ -18,17 +18,7 @@ ul
 }
 #age
 {
-    width: 50vw;
 }
-#rst_btn
-{
-	border-radius: 10px;
-}
-#sub_btn
-{
-	border-radius: 10px;
-}
-
 /* onsubmit event in form tag
 js func input var 
 .get */
