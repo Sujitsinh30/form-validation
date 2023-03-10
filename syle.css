@@ -3,18 +3,32 @@
     margin: 0;
     padding: 0;
 }
-#form
+form
 {
-
+	height: 89vw;
 }
 label
 {
+	color: #dc3545;
     font-weight: 900;
+}
+ul
+{
+	list-style: none;
 }
 #age
 {
     width: 50vw;
 }
+#rst_btn
+{
+	border-radius: 10px;
+}
+#sub_btn
+{
+	border-radius: 10px;
+}
+
 /* onsubmit event in form tag
 js func input var 
 .get */

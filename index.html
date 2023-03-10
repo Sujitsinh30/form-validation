@@ -8,12 +8,14 @@
 <body style="background: url('./assets/background.jpg'); background-attachment: fixed;">
     <script src="./script.js"></script>
     <form class="bg-light container mt-5">
+        <div class="d-flex justify-content-center align-items-center bg-secondary text-warning" style="height: 4em">
+            <h2 class="font-weight-bold">REGISTRATION FORM</h2>
+        </div>
         <div class="form-group">
             <label for="name">Name</label>
-            <div class="row container">
-                <input type="text" class="col-5 form-control" id="fname" placeholder="Enter Your First Name">
-                <p class="col-2"></p>
-                <input type="text" class="col-5 form-control" id="lname" placeholder="Enter Your Last Name">
+            <div class="d-flex">
+                <input type="text" class="form-control" id="fname" placeholder="Enter Your First Name">
+                <input type="text" class="form-control" id="lname" placeholder="Enter Your Last Name">
             </div>
           </div>
         <div class="form-group">
@@ -22,7 +24,7 @@
         </div>
         <div class="form-group">
           <label for="phone">Phone</label>
-          <input type="text" class="form-control" id="phone" placeholder="Phone Number">
+          <input type="tel" class="form-control" id="phone" placeholder="Phone Number" pattern="[0-9]{10}">
         </div>
         <div class="form-group">
             <label for="b_date">Birth Date</label>
@@ -36,8 +38,8 @@
             <label for="color">Choose Your Favourite Color</label><br>
             <input type="color" id="color" list>
         </div>
-        <ul class="list-group" style="list-style: none;">
-            <p style="font-weight: 900;">Payment Method</p>
+        <ul class="list-group">
+            <p class="text-danger" style="font-weight: 900;">Payment Method</p>
             <li><input type="radio" id="crd_card">
             Credit Card<img src="./assets/visa.avif" alt="visa-logo" style="max-width: 2em;">
             <img src="./assets/Mastercard-Symbol.jpg" alt="mast_card" style="max-width: 2.5em"></li><br>
@@ -55,21 +57,23 @@
             On Cash<img src="./assets/cod.png" alt="cod" style="max-width: 2em;"></li><br>
         </ul>
         <div class="form-group">
-            <label for="age">Age(from 15)</label><br>
-            <input type="range" id="age" min="15">
-        </div>
-        <div class="form-group">
-            <input type="checkbox" id="chk_box">
-            <label for="vehicle1" class="text-primary"><a href="#">I Have Read All T&C</a></label><br>
+            <label for="age">Age(From 15)</label><br>
+            <input type="range" class="form-control" id="age" min="15">
         </div>
         <div class="form-group">
             <label for="upl_photo">Upload Image</label><br>
             <input type="file" id="upl_photo">
         </div>
         <div class="form-group">
-            <input type="reset" id="rst_btn">
-            <input type="submit" id="sub_btn">
-        </div>    
+            <input type="checkbox" id="chk_box">
+            <label for="vehicle1" class="text-primary"><a href="#">I Have Read All T&C</a></label><br>
+        </div>
+        <div class="form-group">
+            <input type="reset" class="bg-success text-light font-weight-bold form-control" id="rst_btn" value="RESET" style="width: 6em">
+        </div>
+        <div class="form-group">
+            <input type="submit" class="bg-primary text-light font-weight-bold form-control" value="SUBMIT" id="sub_btn">
+        </div>
     </form>
 </body>
 </html>
