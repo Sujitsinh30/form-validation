@@ -3,9 +3,16 @@
     margin: 0;
     padding: 0;
 }
+body
+{
+    background: url('./assets/background.jpg'); 
+    background-attachment: fixed; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 form
 {
-	height: 89vw;
+	height: auto;
 }
 label
 {
@@ -15,9 +22,6 @@ label
 ul
 {
 	list-style: none;
-}
-#age
-{
 }
 /* onsubmit event in form tag
 js func input var 

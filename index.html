@@ -5,74 +5,75 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <title>Form-Validation</title>
 </head>
-<body style="background: url('./assets/background.jpg'); background-attachment: fixed;">
-    <script src="./script.js"></script>
-    <form class="bg-light container mt-5">
+<body>
+    <script src="./index.js"></script>
+    <form class="bg-light container mt-5" id="std_form">
         <div class="d-flex justify-content-center align-items-center bg-secondary text-warning" style="height: 4em">
             <h2 class="font-weight-bold">REGISTRATION FORM</h2>
         </div>
         <div class="form-group">
             <label for="name">Name</label>
             <div class="d-flex">
-                <input type="text" class="form-control" id="fname" placeholder="Enter Your First Name" required>
-                <input type="text" class="form-control" id="lname" placeholder="Enter Your Last Name" required>
+                <input type="text" class="form-control" id="fname" placeholder="Enter Your First Name" >
+                <input type="text" class="form-control" id="lname" placeholder="Enter Your Last Name" >
+                <div id="msg"></div>
             </div>
           </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter Your Email" required>
+          <input type="email" class="form-control" id="email" placeholder="Enter Your Email" >
         </div>
         <div class="form-group">
           <label for="phone">Phone</label>
-          <input type="tel" class="form-control" id="phone" placeholder="Phone Number" pattern="[0-9]{10}" required>
+          <input type="tel" class="form-control" id="phone" placeholder="Phone Number" pattern="[0-9]{10}" >
         </div>
         <div class="form-group">
             <label for="b_date">Birth Date</label>
-            <input type="date" class="form-control" id="b_date" placeholder="Birth Date" required>
+            <input type="date" class="form-control" id="b_date" placeholder="Birth Date" >
           </div>
         <div class="form-group">
             <label for="ap_time">Appointment Time</label>
-            <input type="time" class="form-control" id="ap_time" placeholder="Appointment Time" required>
+            <input type="time" class="form-control" id="ap_time" placeholder="Appointment Time" >
         </div>
         <div class="form-group">
             <label for="color">Choose Your Favourite Color</label><br>
-            <input type="color" id="color" list required>
+            <input type="color" id="color" list >
         </div>
         <ul class="list-group">
             <p class="text-danger" style="font-weight: 900;">Payment Method</p>
-            <li><input type="radio" name="pay_method" required checked>
+            <li><input type="radio" name="pay_method"  checked>
             Credit Card<img src="./assets/visa.avif" alt="visa-logo" style="max-width: 2em;">
             <img src="./assets/Mastercard-Symbol.jpg" alt="mast_card" style="max-width: 2.5em"></li><br>
 
-            <li><input type="radio" name="pay_method" required>
+            <li><input type="radio" name="pay_method" >
             Debit Card<img src="./assets/Rupay_Logo.png" alt="rupay-logo" style="max-width: 4em;"></li><br>
 
-            <li><input type="radio" name="pay_method" required>
+            <li><input type="radio" name="pay_method" >
             Wallets<img class="ml-1"src="./assets/wlt_logo.jpg" alt="wallet_logo" style="max-width: 3em;"></li><br>
 
-            <li><input type="radio" name="pay_method" required>
+            <li><input type="radio" name="pay_method" >
             UPI<img src="./assets/upi.png" alt="upi_logo" style="max-width: 3em;"></li><br>
 
-            <li><input type="radio" name="pay_method" value="0" required>
+            <li><input type="radio" name="pay_method" value="0" >
             On Cash<img src="./assets/cod.png" alt="cod" style="max-width: 2em;"></li><br>
         </ul>
         <div class="form-group">
             <label for="age">Age(BETWEEN 15 TO 60)</label><br>
-            <input type="range" class="form-control" id="age" min="15" max="60" required><span id="age_n"></span>
+            <input type="range" class="form-control" id="age" min="15" max="60" ><span id="age_n"></span>
         </div>
         <div class="form-group">
             <label for="upl_photo">Upload Image</label><br>
-            <input type="file" id="upl_photo" required>
+            <input type="file" id="upl_photo" >
         </div>
         <div class="form-group">
-            <input type="checkbox" id="chk_box" required>
+            <input type="checkbox" id="chk_box" >
             <label for="vehicle1" class="text-primary"><a href="#">I Have Read All T&C</a></label><br>
         </div>
         <div class="form-group">
             <button class="bg-success text-light font-weight-bold form-control" id="rst_btn" onclick="window.location.reload()" style="width: 6em">RESET</button> 
         </div>
         <div class="form-group">
-            <button class="bg-primary text-light font-weight-bold form-control" id="sub_btn" onclick="">SUBMIT</button> 
+            <button class="bg-primary text-light font-weight-bold form-control" id="sub_btn" onclick="form_validation()">SUBMIT</button> 
         </div>
     </form>
 </body>
