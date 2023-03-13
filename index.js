@@ -207,7 +207,7 @@ function chk_validation()
 	else
 	{
 		chk_error.innerHTML = "Please Check The T&C";
-		return false;
+		return false;	
 	}
 }
 function submission()
