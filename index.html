@@ -7,73 +7,84 @@
 </head>
 <body>
     <script src="./index.js"></script>
-    <form class="bg-light container mt-5" id="std_form">
+    <form class="bg-light container mt-5" name="std_form">
         <div class="d-flex justify-content-center align-items-center bg-secondary text-warning" style="height: 4em">
             <h2 class="font-weight-bold">REGISTRATION FORM</h2>
         </div>
         <div class="form-group">
             <label for="name">Name</label>
             <div class="d-flex">
-                <input type="text" class="form-control" id="fname" placeholder="Enter Your First Name" >
-                <input type="text" class="form-control" id="lname" placeholder="Enter Your Last Name" >
-                <div id="msg"></div>
+                <input type="text" class="form-control" id="fname" placeholder="Enter Your First Name" onkeyup="fname_validation()">
+                <input type="text" class="form-control" id="lname" placeholder="Enter Your Last Name" onkeyup="lname_validation()">
             </div>
-          </div>
+            <div class="row">
+                <div id="fnm_error" class="text-warning col-6"></div>
+                <div id="lname_error" class="text-warning col-6"></div>
+            </div>
+            </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter Your Email" >
+          <input type="email" class="form-control" id="email" placeholder="Enter Your Email" onkeyup="email_validation()">
+          <div id="email_error" class="text-warning"></div>
         </div>
         <div class="form-group">
           <label for="phone">Phone</label>
-          <input type="tel" class="form-control" id="phone" placeholder="Phone Number" pattern="[0-9]{10}" >
+          <input type="tel" class="form-control" id="phone" placeholder="Phone Number" onkeyup="phone_num_validation()">
+          <div id="mnum_error" class="text-warning"></div>
         </div>
         <div class="form-group">
             <label for="b_date">Birth Date</label>
-            <input type="date" class="form-control" id="b_date" placeholder="Birth Date" >
+            <input type="date" class="form-control" id="b_date" placeholder="Birth Date" onkeyup="birth_dateValidation()">
+            <div id="bd_error" class="text-warning"></div>
           </div>
         <div class="form-group">
             <label for="ap_time">Appointment Time</label>
-            <input type="time" class="form-control" id="ap_time" placeholder="Appointment Time" >
+            <input type="time" class="form-control" id="ap_time" placeholder="Appointment Time" onkeyup="atime_validation()">
+            <div id="ap_error" class="text-warning"></div>
         </div>
         <div class="form-group">
             <label for="color">Choose Your Favourite Color</label><br>
-            <input type="color" id="color" list >
+            <input type="color" value="select" onkeyup="color_validation()" id="color" list>
+            <div id="clr_error" class="text-warning"></div>
         </div>
         <ul class="list-group">
             <p class="text-danger" style="font-weight: 900;">Payment Method</p>
-            <li><input type="radio" name="pay_method"  checked>
+            <li><input type="radio" name="pay_method" onkeyup="radio_validation()" id="method1" >
             Credit Card<img src="./assets/visa.avif" alt="visa-logo" style="max-width: 2em;">
             <img src="./assets/Mastercard-Symbol.jpg" alt="mast_card" style="max-width: 2.5em"></li><br>
 
-            <li><input type="radio" name="pay_method" >
+            <li><input type="radio" name="pay_method" onkeyup="radio_validation()" id="method2" >
             Debit Card<img src="./assets/Rupay_Logo.png" alt="rupay-logo" style="max-width: 4em;"></li><br>
 
-            <li><input type="radio" name="pay_method" >
+            <li><input type="radio" name="pay_method" onkeyup="radio_validation()" id="method3" >
             Wallets<img class="ml-1"src="./assets/wlt_logo.jpg" alt="wallet_logo" style="max-width: 3em;"></li><br>
 
-            <li><input type="radio" name="pay_method" >
+            <li><input type="radio" name="pay_method" onkeyup="radio_validation()" id="method4" >
             UPI<img src="./assets/upi.png" alt="upi_logo" style="max-width: 3em;"></li><br>
 
-            <li><input type="radio" name="pay_method" value="0" >
+            <li><input type="radio" name="pay_method" onkeyup="radio_validation()" id="method5" value="0" >
             On Cash<img src="./assets/cod.png" alt="cod" style="max-width: 2em;"></li><br>
+            <div id="radio_error" class="text-warning"></div>
         </ul>
         <div class="form-group">
-            <label for="age">Age(BETWEEN 15 TO 60)</label><br>
-            <input type="range" class="form-control" id="age" min="15" max="60" ><span id="age_n"></span>
+            <label for="age">Age(BETWEEN 15 TO 60)</label>Age:<span id="age_value"></span><br>
+            <input type="range" class="form-control" name="rangeInput" min="16" max="60" onchange="age_num(this.value);">
+            <div id="age_error" class="text-warning"></div>
         </div>
         <div class="form-group">
             <label for="upl_photo">Upload Image</label><br>
             <input type="file" id="upl_photo" >
+            <div id="file_error" class="text-warning"></div>
         </div>
         <div class="form-group">
-            <input type="checkbox" id="chk_box" >
-            <label for="vehicle1" class="text-primary"><a href="#">I Have Read All T&C</a></label><br>
+            <input type="checkbox" id="chk_box" onkeyup="chk_validation()">
+            <label for="vehicle1" class="text-primary"><a href="#">I Have Read All T&C</a></label><br><div id="chk_error" class="text-warning"></div>
         </div>
         <div class="form-group">
             <button class="bg-success text-light font-weight-bold form-control" id="rst_btn" onclick="window.location.reload()" style="width: 6em">RESET</button> 
         </div>
         <div class="form-group">
-            <button class="bg-primary text-light font-weight-bold form-control" id="sub_btn" onclick="form_validation()">SUBMIT</button> 
+            <button class="bg-primary text-light font-weight-bold form-control" id="sub_btn"  onclick="submission();">SUBMIT</button> 
         </div>
     </form>
 </body>
